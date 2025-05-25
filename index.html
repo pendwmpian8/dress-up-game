@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dress Up Game</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <title>Dress Up Game</title>
+  <link rel="stylesheet" href="assets/styles.css">
+    <!--google font-->
+  <style>@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');</style>
+
 </head>
 <body>
-    
+<div><h1>Mini Bunny Dress Up</h1></div>
+
+  <div class="game-container">
+    <img src="assets/images/green-bg.png" class="layer background" alt="background">
+    <img src="assets/images/base.png" class="layer base" alt="Base">
+    <img src="assets/images/blue-dress.png" class="layer outfit" alt="Outfit">
+    <img src="assets/images/orange-shoes.png" class="layer shoes" alt="shoes">
+  </div>
+
+  <div class="controls">
+    <button onclick="cycleItem('background')">Change Background</button>
+    <button onclick="cycleItem('outfit')">Change Dress</button>
+    <button onclick="cycleItem('shoes')">Change Shoes</button>
+  </div>
+
+  <script>
+    // Arrays of images for each layer
+    const imageOptions = {
+      background: ['green-bg.png', 'peach-bg.png', 'orange-bg.png', 'blue-bg.png'],
+      outfit: ['blue-dress.png', 'orange-dress.png', 'green-dress.png', 'peach-dress.png','yellow-dress.png'],
+      shoes: ['orange-shoes.png', 'blue-shoes.png', 'peach-shoes.png', 'green-shoes.png', 'yellow-shoes.png']
+    };
+
+    // Track current index for each layer
+    const currentIndex = {
+      background: 0,
+      outfit: 0,
+      shoes: 0
+    };
+
+    function cycleItem(layer) {
+      // Get next index
+      currentIndex[layer] = (currentIndex[layer] + 1) % imageOptions[layer].length;
+      const filename = imageOptions[layer][currentIndex[layer]];
+      // Update image source
+      document.querySelector('.' + layer).src = 'assets/images/' + filename;
+    }
+  </script>
+<footer>
+<p>created by <a href="https://github.com/pendwmpian8" target="_blank">Hedy</a>!</p>
+</footer>
 </body>
 </html>
