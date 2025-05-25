@@ -59,8 +59,7 @@ You can find their content here: [@nashallery on TikTok](https://www.tiktok.com/
 project-root/
 ├── index.html
 ├── assets/
-│   ├── css
-│   │    └───styles.css
+│   ├── styles.css
 │   └── images/
 │       ├── base.png
 │       ├── green-bg.png
