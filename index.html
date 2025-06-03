@@ -19,36 +19,16 @@
   </div>
 
   <div class="controls">
-    <button onclick="cycleItem('background')">Change Background</button>
-    <button onclick="cycleItem('outfit')">Change Dress</button>
-    <button onclick="cycleItem('shoes')">Change Shoes</button>
-  </div>
+  <button id="btn-background">Change Background</button>
+  <button id="btn-outfit">Change Dress</button>
+  <button id="btn-shoes">Change Shoes</button>
+   </div>
 
-  <script>
-    // Arrays of images for each layer
-    const imageOptions = {
-      background: ['green-bg.png', 'peach-bg.png', 'orange-bg.png', 'blue-bg.png'],
-      outfit: ['blue-dress.png', 'orange-dress.png', 'green-dress.png', 'peach-dress.png','yellow-dress.png'],
-      shoes: ['orange-shoes.png', 'blue-shoes.png', 'peach-shoes.png', 'green-shoes.png', 'yellow-shoes.png']
-    };
 
-    // Track current index for each layer
-    const currentIndex = {
-      background: 0,
-      outfit: 0,
-      shoes: 0
-    };
-
-    function cycleItem(layer) {
-      // Get next index
-      currentIndex[layer] = (currentIndex[layer] + 1) % imageOptions[layer].length;
-      const filename = imageOptions[layer][currentIndex[layer]];
-      // Update image source
-      document.querySelector('.' + layer).src = 'assets/images/' + filename;
-    }
-  </script>
 <footer>
 <p>created by <a href="https://github.com/pendwmpian8" target="_blank">Hedy</a>!</p>
 </footer>
+
+<script src="assets/script.js"></script>
 </body>
 </html>
